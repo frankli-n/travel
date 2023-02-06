@@ -5,7 +5,6 @@ export default function Navbar() {
     return (
         <nav>
             <img src={airbnbnlogo} className="nav--logo" />
-            hi
         </nav>
     )
 }
