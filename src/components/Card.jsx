@@ -1,42 +1,23 @@
 import React from "react"
 
-/*
-Challenge: Build the Card component
-For now, hard-code in the data (like 
-the rating, title, price, etc.)
 
-Notes:
-- Only render 1 instance (I already did this for you)
-- The star icon and photo (katie-zaferes.png) are in the images 
-  folder for your use
-- Make sure to include:
-    - image
-    - star icon (star.png), rating, and review count
-    - title
-    - cost/person
-- The main purpose of this challenge is to show you where our limitations
-  currently are, so don't worry about the fact that you're hard-coding all
-  this data into the component.
-*/
-
-export default function Card() {
+export default function Card(props) {
+    // console.log(props)
     return (
         <section className="card">
             <div className="card--single">
-                {/* <img src={katie} /> */}
-                <span className="card--status">SOLD OUT</span>
-
-                
+                <img src={`../src/images/${props.img}`} className="card--single" />
+                <span className="card--status">{props.status}</span>                
             </div>
 
             <div className="card--stats">
-                <img src="../images/star.png" />
-                <span>5.0</span>
-                <span>(6) • </span>
-                <span>USA</span>
+                <img src="../src/images/star.png" />
+                <span>{props.rating}</span>
+                <span>({props.reviewCount}) • </span>
+                <span>{props.country}</span>
             </div>
-            <p>Life Lessons with Katie Zaferes</p>
-            <p>From $136 / person</p>
+            <p className="card--infotitle">{props.title}</p>
+            <p className="card--infoprice">From ${props.price} / person</p>
         </section>
     )
 }
