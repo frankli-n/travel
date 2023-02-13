@@ -15,16 +15,16 @@ export default function Card(props) {
 
     return (
         <div className="card">
-            {badgeText && <div className="card--badge">{badgeText}</div>}
-            <img src={`../src/images/${props.item.coverImg}`} className="card--image" />
-            <div className="card--stats">
-                <img src="../src/images/star.png" className="card--star" />
-                <span>{props.item.stats.rating}</span>
-                <span className="gray">({props.item.stats.reviewCount}) • </span>
-                <span className="gray">{props.item.location}</span>
+            <div className="place--picture">
+                <img src={`../src/images/${props.item.placePicture}`} className="card--image" />
             </div>
-            <p className="card--title">{props.item.title}</p>
-            <p className="card--price"><span className="bold">From ${props.item.price}</span> / person</p>
+            <div className="place--info">
+                <h1>{props.item.country}</h1>
+                <a href={props.item.googleLocation}>View on Google Maps</a>
+                <p>{props.item.dates}</p>
+                <p>{props.item.description}</p>
+
+            </div>
         </div>
     )
 }
